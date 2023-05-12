@@ -36,3 +36,14 @@ AND `date` = "2020/06/20";
 
 SELECT * FROM `degrees`
 WHERE `name` LIKE "%Magistrale%";
+
+
+//7. Nr totale di dipartimenti nell'università
+
+SELECT COUNT(*) AS "tot_departments" FROM `departments`;
+
+
+//8. Nr totale di insegnanti SENZA nr di telefono
+
+SELECT COUNT(*) AS "Teachers_without_phone_num" FROM `teachers`
+WHERE `phone` IS NULL;
