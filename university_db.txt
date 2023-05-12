@@ -1,11 +1,25 @@
-//Tutti gli studenti il cui anno di nascita è il 1990
+//1. Tutti gli studenti il cui anno di nascita è il 1990
 
 SELECT * FROM `students`
 WHERE `date_of_birth`
 BETWEEN "1990-01-01" AND "1990-12-31";
 
 
-//Tutti i corsi che valgono più di 10 crediti
+//2. Tutti i corsi che valgono più di 10 crediti
 
 SELECT * FROM `courses`
 WHERE `cfu` > 10;
+
+
+//3. Tutti gli studenti che hanno più di 30 anni
+
+SELECT * FROM `students`
+WHERE YEAR(CURDATE()) - YEAR(`date_of_birth`) > 30;
+
+
+//4. Tutti i corsi del primo semestre del primo anno di un qualsiasi corso di laurea
+
+SELECT * FROM `courses`
+WHERE `period` = "I semestre"
+AND `year` = 1
+AND `degree_id` > 0;
